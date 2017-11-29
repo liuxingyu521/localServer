@@ -1,6 +1,6 @@
 # local_server
 
-> 这个repo用来初始化一个本地服务器，支持 `http/https` ，它可以用来在本地做代理。
+这个repo使用express来初始化一个本地服务器，支持 `http/https` ，它可以用来在本地做代理。
 
 ## 使用步骤
 
