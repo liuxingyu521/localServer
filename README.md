@@ -22,8 +22,8 @@
 
     ```javascript
     app.get('/getPersonInfo'， function(req, res){
-				// 如果接口请求存在跨域问题，只需设置 Access-Control-Allow-Origin: *
-		    res.set('Access-Control-Allow-Origin', '*');
+        // 如果接口请求存在跨域问题，只需设置 Access-Control-Allow-Origin: *
+        res.set('Access-Control-Allow-Origin', '*');
 
         var mockData = {
             name: 'Xuer',
