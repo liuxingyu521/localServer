@@ -16,7 +16,7 @@
     
 2. 切换到项目根目录 `localServer` 下，运行 `node server.js`，此时本地代理服务器已启动，命令行输出如下：
 
-    ![lauched interface](img/lauched.png)
+    ![lauched interface](images/lauched.png)
     
 3. 如需代理别的url，修改 `server.js` 文件，如下面例子：
 
