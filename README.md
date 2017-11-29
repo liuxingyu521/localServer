@@ -4,7 +4,7 @@
 
 ## 使用步骤
 
-1. 切换到 `certificate` 目录下执行以下命令(该目录下有详细说明)：
+1. 切换到 `certificate` 目录下执行以下命令(该目录下 `README.md` 有详细说明)：
 
     ```sh
     => openssl genrsa 1024 > ./private.pem
@@ -22,6 +22,9 @@
 
     ```javascript
     app.get('/getPersonInfo'， function(req, res){
+				// 如果接口请求存在跨域问题，只需设置 Access-Control-Allow-Origin: *
+		    res.set('Access-Control-Allow-Origin', '*');
+
         var mockData = {
             name: 'Xuer',
             age: 18
