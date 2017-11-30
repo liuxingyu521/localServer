@@ -1,3 +1,5 @@
 node_modules
 certificate/*.pem
 certificate/*.crt
+
+npm-debug.log
