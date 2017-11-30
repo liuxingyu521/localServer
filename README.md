@@ -22,7 +22,7 @@
     # 输出： http-server lauched at http://localhost:10080
     
     # 或者使用 npm 脚本
-    => npm run http-server
+    => npm run http
     # 输出： http-server lauched at http://localhost:10080
     ```
 
@@ -45,7 +45,7 @@
     # 输出： https-server lauched at http://localhost:10088
     
     # 或者使用 npm 脚本
-    => npm run https-server
+    => npm run https
     # 输出： https-server lauched at http://localhost:10080
     ```
     
