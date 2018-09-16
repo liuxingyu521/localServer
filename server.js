@@ -20,7 +20,7 @@ var httpServer = http.createServer(app);
 app.get('/get', function(req, res){
 	res.status(200);
 	res.send('welcome to http server');
-	red.end();
+	res.end();
 })
 
 // post 请求
