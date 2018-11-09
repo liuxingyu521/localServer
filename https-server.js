@@ -1,5 +1,6 @@
 var fs = require('fs');
 var https = require('https');
+var axios = require('axios');
 
 var express = require('express');
 var app = express();
@@ -23,6 +24,19 @@ var httpsServer = https.createServer(credentials, app);
 app.get('/', function(req, res){
 		res.status(200);
 		res.send('welcome to https server...');
+})
+
+// 代理请求其他接口数据
+app.get('/getPersonInfo', function (req, res) {
+  axios({
+      url: 'https://abc.com/getPersonInfo',
+      method: 'get'
+    })
+    .then(function (response) {
+      res.status(200).send(response.data);
+      res.end();
+    })
+
 })
 
 // 使用server监听端口

@@ -20,7 +20,7 @@
     ```sh
     => node server.js
     # 输出： http-server lauched at http://localhost:10080
-    
+
     # 或者使用 npm 脚本
     => npm run http
     # 输出： http-server lauched at http://localhost:10080
@@ -35,20 +35,20 @@
     => openssl req -new -key ./private.pem -out ./csr.pem
     => openssl x509 -req -days 365 -in ./csr.pem -signkey ./private.pem -out ./custom.crt
     ```
-    
+
     此时，ssl证书已生成，可以用来服务https.
-    
+
     切换到项目根目录 `localServer` 下，运行 `node server.js`，此时本地代理服务器已启动，命令行输出如下：
-    
+
     ```sh
     => node https-server.js
     # 输出： https-server lauched at http://localhost:10088
-    
+
     # 或者使用 npm 脚本
     => npm run https
     # 输出： https-server lauched at http://localhost:10080
     ```
-    
+
 4. **如需代理别的url**，修改 `server.js` (http)或 `https-server.js`(https)文件，如下面例子：
 
     ```javascript
@@ -64,4 +64,14 @@
         res.end();
     })
     ```
+5. **如果需要代理其他接口数据，可使用`axios`请求包来请求数据再返回给客户端**，如下所示：
 
+    ```javascript
+    app.get('/getPersonInfo'，function(req, res){
+      axios.get('http://abc.com/personInfos')
+        .then(function(response){
+          res.status(200).send(response.data);
+          res.end();
+        })
+    })
+    ```

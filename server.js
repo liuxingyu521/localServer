@@ -1,4 +1,5 @@
 var http = require('http');
+var axios = require('axios');
 
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -28,6 +29,19 @@ app.post('/post', function(req, res){
 	// 使用req.body来解析请求体
 	res.status(200).send(req.body);
 	res.end();
+})
+
+// 代理请求其他接口数据
+app.get('/getPersonInfo', function (req, res) {
+  axios({
+      url: 'http://abc.com/getPersonInfo',
+      method: 'get'
+    })
+    .then(function (response) {
+      res.status(200).send(response.data);
+      res.end();
+    })
+
 })
 
 // 使用server监听端口
