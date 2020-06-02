@@ -1,24 +1,24 @@
-var fs = require('fs');
-var https = require('https');
-var axios = require('axios');
+const fs = require('fs');
+const https = require('https');
+const axios = require('axios');
 
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
 
 // https-server端口
-var httpsPort = 10088;
+const httpsPort = 10088;
 
 // 私钥 和 证书文件
-var privateKey = fs.readFileSync('./certificate/private.pem', 'utf8');
-var certificate = fs.readFileSync('./certificate/custom.crt', 'utf8');
+const privateKey = fs.readFileSync('./certificate/private.pem', 'utf8');
+const certificate = fs.readFileSync('./certificate/custom.crt', 'utf8');
 // https-server options
-var credentials = {
+const credentials = {
 	key: privateKey,
 	cert: certificate
 }
 
 // 创建 https-Server
-var httpsServer = https.createServer(credentials, app);
+const httpsServer = https.createServer(credentials, app);
 
 // 使用express（相当于中间件）处理请求
 app.get('/', function(req, res){
@@ -34,7 +34,6 @@ app.get('/getPersonInfo', function (req, res) {
     })
     .then(function (response) {
       res.status(200).send(response.data);
-      res.end();
     })
 
 })

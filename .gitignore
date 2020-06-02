@@ -3,4 +3,3 @@ certificate/*.pem
 certificate/*.crt
 
 npm-debug.log
-package-lock.json
