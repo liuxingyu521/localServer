@@ -1,14 +1,16 @@
-var http = require('http');
-var axios = require('axios');
+const http = require('http');
+const axios = require('axios');
+const express = require('express');
+const bodyParser = require('body-parser');
+const Middlewares = require('./serverMiddleware')
 
-var express = require('express');
-var bodyParser = require('body-parser');
-
-var app = express();
+const app = express();
 
 // 使用body-parser插件来解析post请求的request body
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json({ type: 'application/*+json' }));
+// 解决跨域问题
+app.use(Middlewares.CrossAssign())
 
 // server端口
 var httpPort = 10080;
