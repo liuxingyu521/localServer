@@ -25,7 +25,7 @@
   "homepage": "https://github.com/liuxingyu521/localServer#readme",
   "dependencies": {
     "axios": "^0.18.0",
-    "express": "^4.16.2"
+    "express": "^4.17.3"
   },
   "devDependencies": {
     "eslint": "^5.6.0",
